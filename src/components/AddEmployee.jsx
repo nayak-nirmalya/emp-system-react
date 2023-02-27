@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EmployeeService from "../services/EmployeeService";
 
 const AddEmployee = () => {
   const [employee, setEmployee] = useState({
@@ -11,6 +12,15 @@ const AddEmployee = () => {
   const handleChange = (event) => {
     const value = event.target.value;
     setEmployee({ ...employee, [event.target.name]: value });
+  };
+
+  const saveEmployee = (event) => {
+    event.preventDefault();
+    EmployeeService.saveEmployee(employee)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -55,7 +65,10 @@ const AddEmployee = () => {
           ></input>
         </div>
         <div className="items-center justify-center h-14 w-full my-4 pt-36 space-x-2">
-          <button className="rounded text-white font-semibold bg-green-600 p-1 hover:bg-green-800">
+          <button
+            onClick={saveEmployee}
+            className="rounded text-white font-semibold bg-green-600 p-1 hover:bg-green-800"
+          >
             Save
           </button>
           <button className="rounded text-white font-semibold bg-red-600 p-1 hover:bg-red-800">
