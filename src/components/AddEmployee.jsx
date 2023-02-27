@@ -17,6 +17,16 @@ const AddEmployee = () => {
     setEmployee({ ...employee, [event.target.name]: value });
   };
 
+  const reset = (event) => {
+    event.preventDefault();
+    setEmployee({
+      id: "",
+      firstName: "",
+      lastName: "",
+      emailId: "",
+    });
+  };
+
   const saveEmployee = (event) => {
     event.preventDefault();
     EmployeeService.saveEmployee(employee)
@@ -70,11 +80,14 @@ const AddEmployee = () => {
         <div className="items-center justify-center h-14 w-full my-4 pt-36 space-x-2">
           <button
             onClick={saveEmployee}
-            className="rounded text-white font-semibold bg-green-600 p-1 hover:bg-green-800"
+            className="rounded text-white font-semibold bg-green-600 px-2 p-1 hover:bg-green-800"
           >
             Save
           </button>
-          <button className="rounded text-white font-semibold bg-red-600 p-1 hover:bg-red-800">
+          <button
+            onClick={reset}
+            className="rounded text-white font-semibold bg-red-600 px-2 p-1 hover:bg-red-800"
+          >
             Clear
           </button>
         </div>
