@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddEmployee = () => {
+  const [employee, setEmployee] = useState({
+    id: "",
+    firstName: "",
+    lastName: "",
+    emailId: "",
+  });
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setEmployee({ ...employee, [event.target.name]: value });
+  };
+
   return (
     <div className="flex max-w-2xl h-96 mx-auto shadow border-b">
       <div className="px-8 py-8 mx-auto">
@@ -13,6 +25,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="text"
+            name="firstName"
+            value={employee.firstName}
+            onChange={(event) => handleChange(event)}
             placeholder="Enter First Name Here"
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
@@ -21,6 +36,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="text"
+            name="lastName"
+            value={employee.lastName}
+            onChange={(event) => handleChange(event)}
             placeholder="Enter Last Name Here"
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
@@ -29,6 +47,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="email"
+            name="emailId"
+            value={employee.emailId}
+            onChange={(event) => handleChange(event)}
             placeholder="Enter E-Mail Here"
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
