@@ -1,6 +1,9 @@
 import React from "react";
 
 const UpdateEmployee = () => {
+  const updateEmployee = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="flex max-w-2xl h-96 mx-auto shadow border-b">
       <div className="px-8 py-8 mx-auto">
@@ -44,15 +47,12 @@ const UpdateEmployee = () => {
         </div>
         <div className="items-center justify-center h-14 w-full my-4 pt-36 space-x-2">
           <button
-            onClick={saveEmployee}
+            onClick={updateEmployee}
             className="rounded text-white font-semibold bg-green-600 px-2 p-1 hover:bg-green-800"
           >
             Update
           </button>
-          <button
-            onClick={reset}
-            className="rounded text-white font-semibold bg-red-600 px-2 p-1 hover:bg-red-800"
-          >
+          <button className="rounded text-white font-semibold bg-red-600 px-2 p-1 hover:bg-red-800">
             Cancel
           </button>
         </div>
