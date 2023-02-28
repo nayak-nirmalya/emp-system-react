@@ -10,6 +10,10 @@ class EmployeeService {
   getEmployees() {
     return axios.get(EMP_API_BASE_API);
   }
+
+  deleteEmployee(id) {
+    return axios.delete(EMP_API_BASE_API + "/" + id);
+  }
 }
 
 export default new EmployeeService();
