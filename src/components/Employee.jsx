@@ -1,8 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Employee = ({ employee, deleteEmployee }) => {
+  const navigate = useNavigate();
+
   const editEmployee = (event, id) => {
     event.preventDefault();
+    navigate(`/editEmployee/${id}`);
   };
 
   return (
@@ -18,7 +22,7 @@ const Employee = ({ employee, deleteEmployee }) => {
       </td>
       <td className="text-center px-6 py-4 whitespace-nowrap font-medium text-sm">
         <a
-          onClick={(event, id) => editEmployee(event, id)}
+          onClick={(event, id) => editEmployee(event, employee.id)}
           className="text-indigo-600 hover:text-indigo-800 px-4 hover:cursor-pointer"
         >
           Edit
