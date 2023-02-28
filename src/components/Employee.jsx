@@ -1,6 +1,10 @@
 import React from "react";
 
 const Employee = ({ employee, deleteEmployee }) => {
+  const editEmployee = (event, id) => {
+    event.preventDefault();
+  };
+
   return (
     <tr>
       <td className="text-center px-6 py-4 whitespace-nowrap">
@@ -13,7 +17,10 @@ const Employee = ({ employee, deleteEmployee }) => {
         <div className="text-sm text-gray-500">{employee.emailId}</div>
       </td>
       <td className="text-center px-6 py-4 whitespace-nowrap font-medium text-sm">
-        <a href="#" className="text-indigo-600 hover:text-indigo-800 px-4">
+        <a
+          onClick={(event, id) => editEmployee(event, id)}
+          className="text-indigo-600 hover:text-indigo-800 px-4 hover:cursor-pointer"
+        >
           Edit
         </a>
         <a
