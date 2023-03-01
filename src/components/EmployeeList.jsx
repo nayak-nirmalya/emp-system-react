@@ -37,7 +37,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="container mx-auto my-2 max-w-4xl">
+    <div className="container mx-auto max-w-4xl">
       <div className="flex shadow border-b">
         <table className="min-w-full">
           <thead className="bg-gray-50">

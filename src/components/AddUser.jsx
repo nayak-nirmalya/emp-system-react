@@ -1,6 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
-import EmployeeList from "./EmployeeList";
 
 const AddUser = () => {
   const USER_API_BASE_URL = "http://localhost:8080/api/v1/employees";
@@ -56,7 +55,7 @@ const AddUser = () => {
   return (
     <>
       <div className="container mx-80 my-8 max-w-4xl">
-        <div className="h-12">
+        <div className="h-8">
           <button
             onClick={openModal}
             className="rounded bg-slate-600 text-white px-8 py-2 font-semibold"
@@ -150,7 +149,6 @@ const AddUser = () => {
           </div>
         </Dialog>
       </Transition>
-      {/* <EmployeeList /> */}
     </>
   );
 };
