@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddEmployee from "./components/AddEmployee";
+import AddUser from "./components/AddUser";
 import EmployeeList from "./components/EmployeeList";
 import Navbar from "./components/Navbar";
 import UpdateEmployee from "./components/UpdateEmployee";

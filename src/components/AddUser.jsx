@@ -1,18 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
-import UserList from "./UserList";
+import EmployeeList from "./EmployeeList";
 
 const AddUser = () => {
   const USER_API_BASE_URL = "http://localhost:8080/api/v1/employees";
 
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({
-    id: "",
-    firstName: "",
-    lastName: "",
-    emailId: "",
-  });
-  const [responseUser, setResponseUser] = useState({
     id: "",
     firstName: "",
     lastName: "",
@@ -32,8 +26,8 @@ const AddUser = () => {
     setUser({ ...user, [event.target.name]: value });
   };
 
-  const saveUser = async (e) => {
-    e.preventDefault();
+  const saveUser = async (event) => {
+    event.preventDefault();
     const response = await fetch(USER_API_BASE_URL, {
       method: "POST",
       headers: {
@@ -46,11 +40,11 @@ const AddUser = () => {
     }
     const _user = await response.json();
     setResponseUser(_user);
-    reset(e);
+    reset(event);
   };
 
-  const reset = (e) => {
-    e.preventDefault();
+  const reset = (event) => {
+    event.preventDefault();
     setUser({
       id: "",
       firstName: "",
@@ -154,7 +148,7 @@ const AddUser = () => {
           </div>
         </Dialog>
       </Transition>
-      <UserList user={responseUser} />
+      <EmployeeList />
     </>
   );
 };
