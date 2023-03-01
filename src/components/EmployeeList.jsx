@@ -37,21 +37,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="container mx-auto my-8 max-w-4xl">
-      <div className="h-12 ">
-        <button
-          onClick={() => navigate("/addEmployee")}
-          className="rounded bg-slate-600 text-white px-6 py-2 font-semibold"
-        >
-          Add Employee
-        </button>{" "}
-        <button
-          onClick={() => navigate("/addUser")}
-          className="rounded bg-slate-600 text-white px-6 py-2 font-semibold"
-        >
-          Add User (Modal)
-        </button>
-      </div>
+    <div className="container mx-auto my-2 max-w-4xl">
       <div className="flex shadow border-b">
         <table className="min-w-full">
           <thead className="bg-gray-50">

@@ -36,10 +36,9 @@ const AddUser = () => {
       body: JSON.stringify(user),
     });
     if (!response.ok) {
-      throw new Error("Something went wrong");
+      throw new Error("Something Went Wrong!");
     }
     const _user = await response.json();
-    setResponseUser(_user);
     reset(event);
   };
 
@@ -56,13 +55,13 @@ const AddUser = () => {
 
   return (
     <>
-      <div className="container mx-auto my-8">
+      <div className="container mx-80 my-8 max-w-4xl">
         <div className="h-12">
           <button
             onClick={openModal}
-            className="rounded bg-slate-600 text-white px-6 py-2 font-semibold"
+            className="rounded bg-slate-600 text-white px-8 py-2 font-semibold"
           >
-            Add User
+            Add Employee
           </button>
         </div>
       </div>
@@ -87,7 +86,7 @@ const AddUser = () => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  Add new User
+                  Add New Employee:
                 </Dialog.Title>
                 <div className="flex max-w-md max-auto">
                   <div className="py-2">
@@ -98,6 +97,7 @@ const AddUser = () => {
                       <input
                         type="text"
                         name="firstName"
+                        placeholder="Enter First Name Here"
                         value={user.firstName}
                         onChange={(e) => handleChange(e)}
                         className="h-10 w-96 border mt-2 px-2 py-2"
@@ -110,6 +110,7 @@ const AddUser = () => {
                       <input
                         type="text"
                         name="lastName"
+                        placeholder="Enter Last Name Here"
                         value={user.lastName}
                         onChange={(e) => handleChange(e)}
                         className="h-10 w-96 border mt-2 px-2 py-2"
@@ -117,11 +118,12 @@ const AddUser = () => {
                     </div>
                     <div className="h-14 my-4">
                       <label className="block text-gray-600 text-sm font-normal">
-                        Email Id
+                        E-Mail
                       </label>
                       <input
                         type="text"
                         name="emailId"
+                        placeholder="Enter E-Mail Here"
                         value={user.emailId}
                         onChange={(e) => handleChange(e)}
                         className="h-10 w-96 border mt-2 px-2 py-2"
@@ -148,7 +150,7 @@ const AddUser = () => {
           </div>
         </Dialog>
       </Transition>
-      <EmployeeList />
+      {/* <EmployeeList /> */}
     </>
   );
 };

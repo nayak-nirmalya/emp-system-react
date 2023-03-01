@@ -10,12 +10,13 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
+        <AddUser />
         <Routes>
           <Route index element={<EmployeeList />} />
           <Route path="/" element={<EmployeeList />} />
           <Route path="/employeeList" element={<EmployeeList />} />
           <Route path="/addEmployee" element={<AddEmployee />} />
-          <Route path="/addUser" element={<AddUser />} />
+          {/* <Route path="/addUser" element={<AddUser />} /> */}
           <Route path="/editEmployee/:id" element={<UpdateEmployee />} />
         </Routes>
       </BrowserRouter>
