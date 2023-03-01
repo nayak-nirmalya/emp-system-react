@@ -1,10 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
-import React from "react";
-import { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 import UserList from "./UserList";
 
 const AddUser = () => {
-  const USER_API_BASE_URL = "http://localhost:8080/api/v1/users";
+  const USER_API_BASE_URL = "http://localhost:8080/api/v1/employees";
 
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({
