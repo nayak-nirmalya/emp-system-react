@@ -1,8 +1,11 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
   const USER_API_BASE_URL = "http://localhost:8080/api/v1/employees";
+
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({
@@ -39,6 +42,7 @@ const AddUser = () => {
     }
     const _user = await response.json();
     reset(event);
+    navigate(0);
   };
 
   const reset = (event) => {
